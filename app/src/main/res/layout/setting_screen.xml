@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout_topbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/topbar_color"
+        android:padding="@dimen/_8sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baseline_arrow_back_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/icon_setting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_2sdp"
+            android:src="@drawable/baseline_settings_24"
+            app:layout_constraintBottom_toBottomOf="@id/tv_setting"
+            app:layout_constraintEnd_toStartOf="@id/tv_setting"
+            app:layout_constraintTop_toTopOf="@id/tv_setting" />
+
+        <TextView
+            android:id="@+id/tv_setting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Settings"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:gravity="center"
+        android:text="Mehmood Ahmad"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/constraintLayout_topbar" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout_account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/accountlist_round"
+        android:padding="@dimen/_2sdp"
+        android:paddingStart="@dimen/_8sdp"
+        android:paddingEnd="@dimen/_8sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_name">
+
+        <TextView
+            android:id="@+id/tv_mail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="mehmood@gmail.com"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/icon_arrow_moving"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baseline_arrow_drop_down_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tv_mail"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:background="@drawable/roundcorner_setting"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/constraintLayout_account"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:id="@+id/tv_vpnSetting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="315dp"
+            android:padding="@dimen/_8sdp"
+            android:text="VPN Setting"
+            android:layout_marginTop="@dimen/_8sdp"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayout_killSwitch"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout_killSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/ripple_affect"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayout_AutoConnect"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_vpnSetting"
+            app:layout_constraintVertical_bias="0.0">
+
+            <TextView
+                android:id="@+id/tv_killswitch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kill Switch"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_disableInternet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Disable the internet access when not connected to vpn."
+                android:textSize="@dimen/_10sdp"
+                app:layout_constraintStart_toStartOf="@id/tv_killswitch"
+                app:layout_constraintTop_toBottomOf="@id/tv_killswitch" />
+
+            <Switch
+                android:id="@+id/toggle_killSwitch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_2sdp"
+                app:layout_constraintBottom_toBottomOf="@id/tv_disableInternet"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tv_disableInternet"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/view_lineKillSwitch"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_1sdp"
+                android:background="@color/gray"
+                android:layout_marginTop="@dimen/_4sdp"
+                app:layout_constraintEnd_toEndOf="@id/tv_disableInternet"
+                app:layout_constraintStart_toStartOf="@id/tv_disableInternet"
+                app:layout_constraintTop_toBottomOf="@id/tv_disableInternet" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout_AutoConnect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:background="@drawable/ripple_affect"
+            android:focusable="true"
+            android:clickable="true"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayout_Split_tunneling"
+            app:layout_constraintEnd_toEndOf="@+id/constraintLayout_killSwitch"
+            app:layout_constraintStart_toStartOf="@+id/constraintLayout_killSwitch"
+            app:layout_constraintTop_toBottomOf="@id/constraintLayout_killSwitch">
+
+            <TextView
+                android:id="@+id/tv_AutoConnect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Auto Connect"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_automatically_connect"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Automatically connect when app start."
+                android:textSize="@dimen/_10sdp"
+                app:layout_constraintStart_toStartOf="@id/tv_AutoConnect"
+                app:layout_constraintTop_toBottomOf="@id/tv_AutoConnect" />
+
+            <Switch
+                android:id="@+id/toggle_autoconnect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="92dp"
+                app:layout_constraintBottom_toBottomOf="@id/tv_automatically_connect"
+                app:layout_constraintStart_toEndOf="@id/tv_automatically_connect"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/view_AutoConnectLine"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_1sdp"
+                android:background="@color/gray"
+                android:layout_marginTop="@dimen/_4sdp"
+                app:layout_constraintEnd_toEndOf="@+id/toggle_autoconnect"
+                app:layout_constraintEnd_toStartOf="@+id/toggle_autoconnect"
+                app:layout_constraintStart_toStartOf="@id/tv_automatically_connect"
+                app:layout_constraintTop_toBottomOf="@id/tv_automatically_connect" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout_Split_tunneling"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/ripple_affect"
+            android:focusable="true"
+            android:clickable="true"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayout_MyAccount"
+            app:layout_constraintEnd_toEndOf="@+id/constraintLayout_AutoConnect"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/constraintLayout_AutoConnect"
+            app:layout_constraintTop_toBottomOf="@id/constraintLayout_AutoConnect">
+
+            <TextView
+                android:id="@+id/tv_SplitTunneling"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Split tunneling"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_select_which_app"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Select which apps and sites will go \nthrough the vpn connection"
+                android:textSize="@dimen/_10sdp"
+                app:layout_constraintStart_toStartOf="@id/tv_SplitTunneling"
+                app:layout_constraintTop_toBottomOf="@id/tv_SplitTunneling" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_105sdp"
+                android:src="@drawable/baseline_keyboard_arrow_right_24"
+                app:layout_constraintBottom_toBottomOf="@id/tv_select_which_app"
+                app:layout_constraintStart_toEndOf="@id/tv_select_which_app" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout_MyAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/ripple_affect"
+            android:focusable="true"
+            android:clickable="true"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayout_GetHelp"
+            app:layout_constraintEnd_toEndOf="@+id/constraintLayout_Split_tunneling"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/constraintLayout_Split_tunneling"
+            app:layout_constraintTop_toBottomOf="@id/constraintLayout_Split_tunneling">
+
+            <TextView
+                android:id="@+id/tv_myAccount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="My Account"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_subscription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Subscrioption, expiry, user id, etc."
+                android:textSize="@dimen/_10sdp"
+                app:layout_constraintStart_toStartOf="@id/tv_myAccount"
+                app:layout_constraintTop_toBottomOf="@id/tv_myAccount" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_110sdp"
+                android:src="@drawable/baseline_keyboard_arrow_right_24"
+                app:layout_constraintBottom_toBottomOf="@id/tv_subscription"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tv_subscription"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout_GetHelp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:layout_marginBottom="26dp"
+            android:background="@drawable/ripple_affect"
+            android:focusable="true"
+            android:clickable="true"
+            app:layout_constraintBottom_toTopOf="@+id/tv_others"
+            app:layout_constraintEnd_toEndOf="@+id/constraintLayout_MyAccount"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/constraintLayout_MyAccount"
+            app:layout_constraintTop_toBottomOf="@id/constraintLayout_MyAccount">
+
+            <TextView
+                android:id="@+id/tv_GetHelp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Get Help"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_contact"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Contact support email, etc."
+                android:textSize="@dimen/_10sdp"
+                app:layout_constraintStart_toStartOf="@id/tv_GetHelp"
+                app:layout_constraintTop_toBottomOf="@id/tv_GetHelp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_135sdp"
+                android:src="@drawable/baseline_keyboard_arrow_right_24"
+                app:layout_constraintBottom_toBottomOf="@id/tv_contact"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tv_contact"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/tv_others"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_8sdp"
+            android:text="Others"
+            app:layout_constraintBottom_toTopOf="@+id/tv_joinTelegram"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/constraintLayout_GetHelp" />
+
+        <TextView
+            android:id="@+id/tv_joinTelegram"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:text="Join telegram"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_others" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:text="Facebook"
+            app:layout_constraintStart_toStartOf="@id/tv_joinTelegram"
+            app:layout_constraintTop_toBottomOf="@id/tv_joinTelegram" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
